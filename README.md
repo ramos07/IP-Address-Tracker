@@ -38,7 +38,7 @@
 
 ---
 
-### Screenshots
+### Screenshots :camera:
 
 #### Default view
 
