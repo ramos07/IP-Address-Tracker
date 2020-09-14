@@ -20,7 +20,7 @@ app.use("/scripts", express.static(__dirname + "node_modules"));
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // Handlebars middleware
 app.engine(
