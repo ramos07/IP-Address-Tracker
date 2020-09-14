@@ -1,0 +1,51 @@
+<div class="top-section">
+    <a href="/">
+        <h1>IP Address Tracker</h1>
+    </a>
+    {{!-- IP ADDRESS SEARCH BAR --}}
+    <div class="input-wrapper">
+        <form action="/ip" method="POST">
+            <input id="ip" name="ip" type="text" placeholder="Search for any IP address or domain" required>
+            <button type="submit">
+                <img src="/images/icon-arrow.svg" alt="sumbit arrow">
+            </button>
+        </form>
+    </div>
+    {{!-- IP ADDRESS DATA RESULTS --}}
+    <div class="results-section">
+        <ul>
+            <li>
+                <h5>IP Address</h5>
+                {{#if ipAddress }}
+                <p>{{ ipAddress }}</p>
+                {{/if}}
+            </li>
+            <div class="vertical"></div>
+            <li>
+                <h5>Location</h5>
+                {{#if city }}
+                <p>{{ city }}, {{state}} {{zip}}</p>
+                {{/if}}
+            </li>
+            <div class="vertical"></div>
+
+            <li>
+                <h5>Timezone</h5>
+                {{#if timezone }}
+                <p>{{ timezone }}</p>
+                {{/if}}
+            </li>
+            <div class="vertical"></div>
+
+            <li>
+                <h5>ISP</h5>
+                {{#if isp }}
+                <p>{{ isp }}</p>
+                {{/if}}
+            </li>
+
+        </ul>
+    </div>
+</div>
+{{!-- MAP SECTION--}}
+<div id="map" data-lat="{{lat}}" data-lng="{{lng}}"></div>
